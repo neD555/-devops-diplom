@@ -101,22 +101,31 @@ terraform init \
 
 1. Grafana dashboard с метриками Kubernetes.
 <img width="1530" height="820" alt="grafana-dashboard" src="https://github.com/user-attachments/assets/53e514b2-e01d-4429-bb57-cfadc1d0632e" />
+
 2. GitHub Actions pipeline приложения при push в main.
 <img width="1916" height="754" alt="app-ci-main" src="https://github.com/user-attachments/assets/313cfffa-8efd-4eb0-9d71-0a308daa85c1" />
+
 3. GitHub Actions pipeline приложения при создании тега v1.0.0.
 <img width="1914" height="577" alt="app-cd-tag" src="https://github.com/user-attachments/assets/80e0ac03-c4c7-4056-8b32-6e7f50f79877" />
+
 4. GitHub Actions pipeline Terraform.
 <img width="1914" height="720" alt="terraform-pipeline" src="https://github.com/user-attachments/assets/3d89115c-db12-4ad9-8202-539386cee70d" />
+
 5. Список Docker images в Yandex Container Registry.
 <img width="668" height="498" alt="container-registry" src="https://github.com/user-attachments/assets/3aa2e6b5-d9b3-489e-a61d-f539d32f3e87" />
+
 6. Вывод kubectl get nodes.
 <img width="668" height="562" alt="kubernetes-nodes-services" src="https://github.com/user-attachments/assets/af7c63b6-b581-45f7-b7f2-f6b4a0f0bfd3" />
+
 7. Вывод kubectl get pods --all-namespaces.
 <img width="671" height="954" alt="kubernetes-pods" src="https://github.com/user-attachments/assets/b32ef756-d7b3-4445-9c6f-3b75b829cc43" />
+
 8. Вывод kubectl get svc и kubectl get svc -n monitoring.
 <img width="677" height="266" alt="terraform-output" src="https://github.com/user-attachments/assets/4979a16b-7808-43b0-a67f-c8e18b5fda4d" />
+
 9. Вывод terraform output.
 <img width="670" height="362" alt="terraform-init" src="https://github.com/user-attachments/assets/d6657ee4-880a-477a-a525-ba463b7aa180" />
+
 10. Проверка HTTP доступа к тестовому приложению.
 <img width="672" height="761" alt="application-curl" src="https://github.com/user-attachments/assets/d0d51f8b-ec8c-4b35-b73e-570c65b33791" />
 
