@@ -128,6 +128,7 @@ terraform init \
 
 10. Проверка HTTP доступа к тестовому приложению.
 <img width="672" height="761" alt="application-curl" src="https://github.com/user-attachments/assets/d0d51f8b-ec8c-4b35-b73e-570c65b33791" />
+<img width="1529" height="336" alt="тестовое приложение" src="https://github.com/user-attachments/assets/2ac0f02a-5f3a-4fb2-9644-54313cf5dd6e" />
 
 ## Примечание
 
