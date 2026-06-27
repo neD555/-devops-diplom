@@ -1,22 +1,22 @@
-# DevOps diploma practice in Yandex Cloud
+# Дипломный практикум DevOps в Yandex Cloud
 
-## Project repositories
+## Репозитории проекта
 
-Terraform infrastructure:
+Terraform инфраструктура:
 
 https://github.com/neD555/diploma-infra
 
-Test application with Dockerfile and CI/CD:
+Тестовое приложение с Dockerfile и CI/CD:
 
 https://github.com/neD555/diploma-app
 
-Kubernetes manifests and monitoring notes:
+Kubernetes манифесты и описание мониторинга:
 
 https://github.com/neD555/diploma-k8ss
 
-## Deployed services
+## Развернутые сервисы
 
-Test application:
+Тестовое приложение:
 
 http://158.160.176.150
 
@@ -24,52 +24,52 @@ Grafana:
 
 http://158.160.172.142
 
-Grafana login:
+Логин Grafana:
 
 admin
 
-Grafana password command:
+Команда для получения пароля Grafana:
 
 kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
 
-## Docker image
+## Docker образ
 
-Yandex Container Registry image:
+Образ в Yandex Container Registry:
 
 cr.yandex/crprddkr87q49dkd6bl2/diploma-app:v1.0.0
 
-## Infrastructure
+## Инфраструктура
 
-The infrastructure was created with Terraform in Yandex Cloud.
+Инфраструктура создана в Yandex Cloud с помощью Terraform.
 
-Created resources:
+Созданные ресурсы:
 
-- Terraform backend in Yandex Object Storage.
-- VPC network.
-- Subnets in multiple availability zones.
+- Terraform backend в Yandex Object Storage.
+- VPC сеть.
+- Подсети в нескольких зонах доступности.
 - Yandex Container Registry.
 - Yandex Managed Kubernetes cluster.
-- Node group with 3 worker nodes.
-- LoadBalancer for the test application.
-- Prometheus, Grafana, Alertmanager via kube-prometheus-stack.
+- Группа worker nodes из 3 узлов.
+- LoadBalancer для тестового приложения.
+- Prometheus, Grafana, Alertmanager через kube-prometheus-stack.
 
 ## CI/CD
 
-Application CI/CD:
+CI/CD тестового приложения:
 
-- Repository: https://github.com/neD555/diploma-app
-- GitHub Actions builds Docker image on push to main.
-- GitHub Actions builds and deploys image on tag v1.0.0.
-- Deployed image: cr.yandex/crprddkr87q49dkd6bl2/diploma-app:v1.0.0
+- Репозиторий: https://github.com/neD555/diploma-app
+- GitHub Actions собирает Docker image при push в main.
+- GitHub Actions собирает и деплоит Docker image при создании тега v1.0.0.
+- Развернутый образ: cr.yandex/crprddkr87q49dkd6bl2/diploma-app:v1.0.0
 
-Terraform CI/CD:
+CI/CD Terraform:
 
-- Repository: https://github.com/neD555/diploma-infra
-- GitHub Actions runs terraform init, fmt, validate and plan.
+- Репозиторий: https://github.com/neD555/diploma-infra
+- GitHub Actions выполняет terraform init, fmt, validate и plan.
 
-## Kubernetes checks
+## Проверка Kubernetes
 
-Useful commands:
+Команды для проверки:
 
 kubectl get nodes
 
@@ -79,37 +79,37 @@ kubectl get svc
 
 kubectl get svc -n monitoring
 
-## Terraform checks
+## Проверка Terraform
 
-Main Terraform directory:
+Основная директория Terraform:
 
 cd ~/diploma-infra/terraform
 
-Terraform output:
+Вывод Terraform output:
 
 terraform output
 
-Terraform init with remote backend:
+Инициализация Terraform с remote backend:
 
 terraform init \
   -backend-config="access_key=$(cat ~/.terraform-yc/backend-access-key)" \
   -backend-config="secret_key=$(cat ~/.terraform-yc/backend-secret-key)"
 
-## Screenshots for review
+## Скриншоты для проверки
 
-Recommended screenshots:
+К работе приложены скриншоты:
 
-1. Grafana Kubernetes dashboard.
-2. Application CI pipeline on main branch.
-3. Application CD pipeline on tag v1.0.0.
-4. Terraform GitHub Actions pipeline.
-5. Yandex Container Registry image list.
-6. kubectl get nodes.
-7. kubectl get pods --all-namespaces.
-8. kubectl get svc and kubectl get svc -n monitoring.
-9. terraform output.
-10. Test application opened in browser or checked with curl.
+1. Grafana dashboard с метриками Kubernetes.
+2. GitHub Actions pipeline приложения при push в main.
+3. GitHub Actions pipeline приложения при создании тега v1.0.0.
+4. GitHub Actions pipeline Terraform.
+5. Список Docker images в Yandex Container Registry.
+6. Вывод kubectl get nodes.
+7. Вывод kubectl get pods --all-namespaces.
+8. Вывод kubectl get svc и kubectl get svc -n monitoring.
+9. Вывод terraform output.
+10. Проверка HTTP доступа к тестовому приложению.
 
-## Notes
+## Примечание
 
-Ansible repository is not provided because the Kubernetes cluster was created with Yandex Managed Service for Kubernetes.
+Репозиторий Ansible не предоставляется, так как Kubernetes кластер создан через Yandex Managed Service for Kubernetes.
